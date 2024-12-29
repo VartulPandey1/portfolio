@@ -366,6 +366,7 @@
                 cursor: pointer;
                 font-size: 20px;
             }
+            
 
             @media (max-width: 375px) {
                 .hero h1 {
@@ -380,6 +381,7 @@
                     font-size: 14px;
                 }
             }
+            
         }
     </style>
 </head>
@@ -389,7 +391,7 @@
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <h2>Contents<span class="arrow-down" onclick="toggleNav()">&#9660;</span></h2>
+            <h2>Contents<span style="cursor: pointer;" class="arrow-down" onclick="toggleNav()">&#9650; </span></h2>
             <nav>
                 <ul id="nav-list">
                     <li><a href="#about">About</a></li>
@@ -422,13 +424,25 @@
             <section id="projects">
                 <h2>My Projects</h2>
                 <div class="project-grid">
-                    <a href="https://github.com/VartulPandey1/DevSwipe-Frontend" style="text-decoration: none;"
+                    <div style="text-decoration: none;"
                         class="project-card">
                         <h3>Chatting App</h3>
-                        <p>Design and Develop a Web App with back-end on Node.js, Express.js, Socket.io and MongoDB
-                            database and
-                            front end using React, CSS.Utilized the socket.io to build a real time messaging system.</p>
-                    </a>
+                        <p>Design and develop a full-stack web application with a Node.js and Express.js back-end, utilizing Socket.io for real-time 
+                            communication and MongoDB for data storage. The front-end is built using React and styled with CSS for a responsive UI.
+                            <div class="repo-links">
+                                <a href="https://github.com/VartulPandey1/Chatting-frontEnd" target="_blank" class="repo-link">
+                                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                        alt="GitHub Logo" class="github-logo">
+                                    Front-End Repository
+                                </a>
+                                <a href="https://github.com/VartulPandey1/Chatting-backend" target="_blank" class="repo-link">
+                                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                        alt="GitHub Logo" class="github-logo">
+                                    Back-End Repository
+                                </a>
+                            </div>
+                        </p>
+                        </div>
                     <div href="" style="text-decoration: none;" class="project-card">
                         <h3>Dev Swipe</h3>
                         <p>Developed a full-stack web application with the MERN stack, enabling users to create
@@ -450,20 +464,19 @@
                         </p>
                     </div>
                     <div class="project-card">
-                        <h3>Blog Application</h3>
-                        <p>A blog platform that allows users to create and share posts. Features include commenting and
-                            user authentication. Built with Django and JavaScript.</p>
-                        <div class="repo-links">
-                            <a href="https://github.com/yourusername/frontend-repo" target="_blank" class="repo-link">
+                        <h3>Digital Thrifting</h3>
+                        <p>Built a responsive e-commerce app in React with dark and light mode options. Implemented product browsing, cart management, and theme toggling. Focused on performance optimization and seamless interactions up to the cart page.</p>
+                        <div class="repo-links" style="margin-top: 10%;">
+                            <a href="https://github.com/VartulPandey1/DigitalThrifting" target="_blank" class="repo-link">
                                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                                     alt="GitHub Logo" class="github-logo">
-                                Front-End Repository
+                                Code Repository
                             </a>
-                            <a href="https://github.com/yourusername/backend-repo" target="_blank" class="repo-link">
+                            <!-- <a href="https://github.com/yourusername/backend-repo" target="_blank" class="repo-link">
                                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                                     alt="GitHub Logo" class="github-logo">
                                 Back-End Repository
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -572,7 +585,7 @@
         function toggleNav() {
             const navList = document.getElementById("nav-list");
             const arrow = document.querySelector(".arrow-down");
-            if (navList.style.display === "block") {
+            if (navList.style.display !== "none") {
                 navList.style.display = "none";
                 arrow.innerHTML = "&#9660;"; // Down arrow
             } else {
